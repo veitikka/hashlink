@@ -27,7 +27,7 @@ jobs:
 
         include:
           - target: linux
-            runner: ubuntu-18.04
+            runner: ubuntu-20.04
             haxe_nightly_dir: linux64
             archive_ext: tar.gz
 
@@ -64,6 +64,9 @@ jobs:
         exclude:
           - target: linux
             build_system: vs2019
+
+          - target: linux
+            architecture: 32
 
           - target: darwin
             build_system: vs2019
@@ -356,7 +359,6 @@ jobs:
           --prerelease \
           --title "HashLink Nightly Build" \
           "artifact/hashlink-${short_commit}-darwin.tar.gz#hashlink-latest-darwin.tar.gz" \
-          "artifact/hashlink-${short_commit}-linux-i386.tar.gz#hashlink-latest-linux-i386.tar.gz" \
           "artifact/hashlink-${short_commit}-linux-amd64.tar.gz#hashlink-latest-linux-amd64.tar.gz" \
           "artifact/hashlink-${short_commit}-win32.zip#hashlink-latest-win32.zip" \
           "artifact/hashlink-${short_commit}-win64.zip#hashlink-latest-win64.zip"
