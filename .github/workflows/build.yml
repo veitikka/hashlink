@@ -21,8 +21,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [linux, darwin, windows]
-        architecture: [32, 64]
+        target: [linux, windows]
+        architecture: [64]
         build_system: [make, cmake, vs2019]
 
         include:
@@ -358,7 +358,7 @@ jobs:
         gh release create latest \
           --prerelease \
           --title "HashLink Nightly Build" \
-          "artifact/hashlink-${short_commit}-darwin.tar.gz#hashlink-latest-darwin.tar.gz" \
+          # "artifact/hashlink-${short_commit}-darwin.tar.gz#hashlink-latest-darwin.tar.gz" \
           "artifact/hashlink-${short_commit}-linux-amd64.tar.gz#hashlink-latest-linux-amd64.tar.gz" \
-          "artifact/hashlink-${short_commit}-win32.zip#hashlink-latest-win32.zip" \
+          # "artifact/hashlink-${short_commit}-win32.zip#hashlink-latest-win32.zip" \
           "artifact/hashlink-${short_commit}-win64.zip#hashlink-latest-win64.zip"
