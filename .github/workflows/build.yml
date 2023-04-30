@@ -297,7 +297,6 @@ jobs:
             dist_folder=hashlink-${short_commit}-${platform_name}
             make PACKAGE_NAME=$dist_folder MARCH=${{ matrix.architecture }} release
 
-            echo "HASHLINK_DISTRIBUTION=bin/$dist_folder.${{ matrix.archive_ext }}"
             echo "HASHLINK_DISTRIBUTION=$dist_folder.${{ matrix.archive_ext }}" >> $GITHUB_ENV
             ;;
         esac
@@ -360,6 +359,6 @@ jobs:
           --prerelease \
           --title "HashLink Nightly Build" \
           # "artifact/hashlink-${short_commit}-darwin.tar.gz#hashlink-latest-darwin.tar.gz" \
-          "artifact/hashlink-${short_commit}-linux-amd64.tar.gz#hashlink-latest-linux-amd64.tar.gz" \
+          "artifact/hashlink-${short_commit}-linux-amd64.tar.gz" \
           # "artifact/hashlink-${short_commit}-win32.zip#hashlink-latest-win32.zip" \
           "artifact/hashlink-${short_commit}-win64.zip#hashlink-latest-win64.zip"
