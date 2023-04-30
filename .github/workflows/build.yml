@@ -23,7 +23,7 @@ jobs:
       matrix:
         target: [linux, windows]
         architecture: [64]
-        build_system: [make, cmake, vs2019]
+        build_system: [make, vs2019] # cmake,
 
         include:
           - target: linux
@@ -36,8 +36,8 @@ jobs:
           #   haxe_nightly_dir: mac
           #   archive_ext: tar.gz
 
-          - build_system: cmake
-            cmake_configuration: RelWithDebInfo
+          # - build_system: cmake
+          #   cmake_configuration: RelWithDebInfo
 
           - build_system: vs2019
             msbuild_configuration: Release
@@ -47,9 +47,9 @@ jobs:
             haxe_nightly_dir: windows64
             archive_ext: zip
 
-          - target: windows
-            build_system: cmake
-            cmake_generator: Visual Studio 16 2019
+          # - target: windows
+          #   build_system: cmake
+          #   cmake_generator: Visual Studio 16 2019
 
           # - target: windows
           #   architecture: 32
